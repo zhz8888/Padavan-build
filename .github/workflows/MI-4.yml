@@ -119,14 +119,15 @@ jobs:
         
 
         
+
+    
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        name: ${{ steps.tag.outputs.release_date }} hiwifi_hc5761
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: /opt/images/*
-
-    
+        files: ${{ env.FIRMWARE }}/*
