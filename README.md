@@ -1,4 +1,6 @@
-# Padavan 固件自动编译
+# Padavan固件
+> 在Actions页面底部下载固件
+---
 IP地址: 192.168.2.1
 
 用户名: admin
